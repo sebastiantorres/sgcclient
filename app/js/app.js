@@ -5,10 +5,14 @@ angular.module('sgcclientApp', [
   'ngRoute'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/login',{templateUrl :'partials/login.html'});
+  $routeProvider
+  .when('/contaduria/premiosalcobro',{
+        templateUrl :'views/contaduria/premiosAlCobro/abm.html',
+        controller: 'premiosAlCobroCtrl'
+      });
   $routeProvider.otherwise({redirectTo:'/'});
 }]);
 
-function MainCtrl($scope){
-  
-}
+sgcclientApp.controller('premiosAlCobroCtrl',function($scope){
+  $scope.message='Premios al cobro';
+});
